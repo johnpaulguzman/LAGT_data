@@ -1,20 +1,20 @@
 # LAGT_data
 
-Bayes Server 7.25 (32-bit) usage:
-> New Network
-> Add nodes from data
-  > Data Connection (+)
-    > CSV (Microsoft Text Driver)
-    > Select the directory for the data
-    > OK
-  > Data (...)
-    > Select your dataset file
-    > OK
-  > Continue with default settings
-> Use Structural Learning to add links from data
-  > Continue with default settings and use the PC Algorithm
-> Learn from data using Parameter Learning
-  > Continue with default settings
-> Click All to query all nodes (F6)
-> Refactoring
-  > Layout
+Installation for R:
+  Open RGui and use the console to run the commands:
+    $ chooseCRANmirror()
+      > Choose US Mirror
+    $ source("http://bioconductor.org/biocLite.R")
+    $ biocLite(c("graph", "Rgraphviz", "RBGL"))
+    $ install.packages("gRain")
+    $ install.packages("bnlearn")
+
+Usage for GeNIe Academic:
+  Open network file:
+    Fix layout: Layout -> Graph Layout -> Parent Ordering -> Top to Bottom, Spacing = 50% -> OK
+    Show probabilities: Press F8
+    Auto-update beliefs: Press Ctrl + F5
+    Query nodes: Double-click node values 
+
+Usage for R:
+  Open RGui and drag the .r script to the console window
