@@ -20,8 +20,7 @@ Usage for R:
   Open RGui and drag the .r script to the console window
 
 
-
-SOURCES: 
+## SOURCES: 
 http://www.ucdenver.edu/academics/colleges/PublicHealth/Academics/departments/Biostatistics/WorkingGroups/Documents/Networks%20Presentation%20With%20Sachs%20-%20032317.pdf
 http://www.bnlearn.com/documentation/man/bnlearn-package.html
 http://www.bnlearn.com/book-useR/ | pp. 35

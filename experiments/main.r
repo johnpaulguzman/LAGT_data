@@ -1,12 +1,12 @@
 ## See README.md for more details
 
+## Initialize workspace and parameters
 rm(list=ls())
-setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
-library("bnlearn")
-
-
+work_dir = "C:/Users/JP/Desktop/LAGT_data/experiments/"
 expected_file = "BN15a-B1.dsc"
 empirical_dataset = "data_exam2.csv"
+setwd(work_dir)
+library("bnlearn")
 
 ## Process files
 expected_fitted = read.dsc(expected_file)
@@ -41,10 +41,10 @@ for (network in learned_networks){
     print(paste("Algorithm:", network$learning$algo, " -- || -- Hamming distance:", network$hamming_distance, ", Structural Hamming distance:", network$structural_hamming_distance))
 }
 
-## Export learned network to GeNIe readable file
-empirical_file = "test_gs.stable_output_network.dsc"
-empirical_network = cextend(gs(empirical_data))
-empirical_fitted = bn.fit(empirical_network, empirical_data)
-write.dsc(empirical_file, empirical_fitted)
-print(paste("Exported model to: ", empirical_file))
-hamming(expected_network, empirical_network)
+## Fit parameters and network to GeNIe / Netica readable file
+for (network in learned_networks){
+    empirical_file = paste("./output/", network$learning$algo, "_network.dsc", sep="")
+    empirical_fitted = bn.fit(network, empirical_data)
+    write.dsc(empirical_file, empirical_fitted)
+    print(paste("Exported model to: ", empirical_file))
+}
