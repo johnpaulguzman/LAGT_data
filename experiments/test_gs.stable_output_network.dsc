@@ -141,46 +141,46 @@ probability ( vars | decl ) {
   (0) : 1.0, 0.0;
   (1) : 0.1818182, 0.8181818;
 }
-probability ( constl ) {
-   0.9, 0.1;
+probability ( constl | logrel ) {
+  (0) : 0.95714286, 0.04285714;
+  (1) : 0.5, 0.5;
 }
-probability ( opaspr | logrel ) {
+probability ( opaspr | ampas ) {
+  (0) : 0.98461538, 0.01538462;
+  (1) : 0.4666667, 0.5333333;
+}
+probability ( dtype | opaspr ) {
   (0) : 1.0, 0.0;
-  (1) : 0.1, 0.9;
-}
-probability ( dtype ) {
-   0.9375, 0.0625;
+  (1) : 0.4444444, 0.5555556;
 }
 probability ( ampas ) {
    0.8125, 0.1875;
 }
-probability ( assgn | lrvalue ) {
-  (0) : 1.0, 0.0;
-  (1) : 0.0, 1.0;
+probability ( assgn ) {
+   0.9125, 0.0875;
 }
-probability ( arith | endlp ) {
-  (0) : 0.98245614, 0.01754386;
-  (1) : 0.3478261, 0.6521739;
+probability ( arith | block ) {
+  (0) : 0.96551724, 0.03448276;
+  (1) : 0.3636364, 0.6363636;
 }
 probability ( logrel ) {
    0.875, 0.125;
 }
-probability ( block ) {
-   0.725, 0.275;
+probability ( block | exprn ) {
+  (0) : 0.8656716, 0.1343284;
+  (1) : 0.0, 1.0;
 }
 probability ( decl ) {
    0.8625, 0.1375;
 }
-probability ( exprn | incdcr ) {
-  (0) : 1.0, 0.0;
-  (1) : 0.07142857, 0.92857143;
+probability ( exprn ) {
+   0.8375, 0.1625;
 }
 probability ( lrvalue ) {
    0.9125, 0.0875;
 }
-probability ( incdcr | selcpt ) {
-  (0) : 0.97058824, 0.02941176;
-  (1) : 0.0, 1.0;
+probability ( incdcr ) {
+   0.825, 0.175;
 }
 probability ( varscop ) {
    0.875, 0.125;
@@ -197,9 +197,8 @@ probability ( itcpt ) {
 probability ( selcpt ) {
    0.85, 0.15;
 }
-probability ( fncpar | sequen ) {
-  (0) : 1.0, 0.0;
-  (1) : 0.05882353, 0.94117647;
+probability ( fncpar ) {
+   0.8, 0.2;
 }
 probability ( countit ) {
    0.7625, 0.2375;
@@ -219,19 +218,18 @@ probability ( fncdef ) {
 probability ( callfnc ) {
    0.8125, 0.1875;
 }
-probability ( pasaddr | printf ) {
-  (0) : 0.6268657, 0.3731343;
-  (1) : 0.0, 1.0;
+probability ( pasaddr ) {
+   0.525, 0.475;
 }
-probability ( stdio ) {
-   0.85, 0.15;
+probability ( stdio | ampas ) {
+  (0) : 0.93846154, 0.06153846;
+  (1) : 0.4666667, 0.5333333;
 }
 probability ( conti ) {
    0.475, 0.525;
 }
-probability ( exitlp | fncs ) {
-  (0) : 0.95522388, 0.04477612;
-  (1) : 0.3076923, 0.6923077;
+probability ( exitlp ) {
+   0.85, 0.15;
 }
 probability ( endlp ) {
    0.7125, 0.2875;
@@ -245,22 +243,17 @@ probability ( ifelse ) {
 probability ( ifseri ) {
    0.8, 0.2;
 }
-probability ( switch | break ) {
-  (0) : 1.0, 0.0;
-  (1) : 0.05882353, 0.94117647;
+probability ( switch ) {
+   0.8, 0.2;
 }
-probability ( scanf | dtype, ampas ) {
-  (0, 0) : 1.0, 0.0;
-  (1, 0) : 0.5, 0.5;
-  (0, 1) : 0.8, 0.2;
-  (1, 1) : 0.0, 1.0;
+probability ( scanf ) {
+   0.9125, 0.0875;
 }
 probability ( printf ) {
    0.8375, 0.1625;
 }
-probability ( break | default ) {
-  (0) : 1.0, 0.0;
-  (1) : 0.1052632, 0.8947368;
+probability ( break ) {
+   0.7875, 0.2125;
 }
 probability ( prepost ) {
    0.7125, 0.2875;
