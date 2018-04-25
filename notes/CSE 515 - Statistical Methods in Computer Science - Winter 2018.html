@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0054)https://courses.cs.washington.edu/courses/cse515/18wi/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- THIS IS A MACHINE-GENERATED/MAINTAINED FILE. YOU CAN MANUALLY EDIT CONTENT
+   - ONLY BETWEEN HTML COMMENTS "begin HTML content" AND "end HTML content"
+   - OTHER CHANGES WILL BE LOST! TO MAINTAIN, 
+   - USE http://www.cs.washington.edu/htbin-post/content-tool.cgi. -->
+<!--begin header content-->
+<style type="text/css">
+table.sample {            border-width: 1px 1px 1px 1px;border-spacing: 2px;border-style: none none none none;border-color: gray gray gray gray;
+border-collapse: separate; background-color: white;
+}
+table.sample th {
+        border-width: 1px 1px 1px 1px;
+        padding: 1px 1px 1px 1px;
+        border-style: groove groove groove groove;
+        border-color: gray gray gray gray;
+        background-color: white;
+        -moz-border-radius: 0px 0px 0px 0px;
+}
+table.sample td {
+        border-width: 1px 1px 1px 1px;
+        padding: 1px 1px 1px 1px;
+        border-style: groove groove groove groove;
+        border-color: gray gray gray gray;
+        background-color: white;
+        -moz-border-radius: 0px 0px 0px 0px;
+}
+</style>
+
+<!--end header content-->
+ <title>CSE 515 - Statistical Methods in Computer Science - Winter 2018</title>
+ <link rel="stylesheet" href="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/cse.css" type="text/css">
+ <script src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/cse2.js.download" type="text/javascript"></script><style></style>
+
+</head>
+
+<body bgcolor="#ffffff">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+ <tbody><tr>
+  <td>
+   <table width="100%" cellpadding="10">
+    <tbody><tr>
+     <td><img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/sptm133.jpg" width="133" height="100" border="2" alt="Steam-powered Turing Machine">
+</td>
+     <td width="100%"><img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/csehead3.png" width="600" height="70" alt="University of Washington Computer Science &amp; Engineering">
+
+      <hr noshade="noshade">
+      <span class="myH2" size="5">&nbsp;CSE 515 - Statistical Methods in Computer Science - Winter 2018</span>
+     </td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+</tbody></table>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#666600" width="100%">
+<tbody><tr valign="middle">
+ <td width="100%" align="left"><a onmouseover="m(&#39;cse&#39;,1)" onmouseout="m(&#39;cse&#39;,0)" href="http://www.cs.washington.edu/" class="barlink">&nbsp;<img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/wharrow.gif" name="cse" border="0" alt="">&nbsp;CSE&nbsp;Home&nbsp;</a></td>
+ <td><a onmouseover="m(&#39;about&#39;,1)" onmouseout="m(&#39;about&#39;,0)" href="http://www.cs.washington.edu/info/aboutus/" class="barlink"><img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/wharrow.gif" name="about" border="0" alt="">&nbsp;About&nbsp;Us</a></td>
+ <td><a onmouseover="m(&#39;search&#39;,1)" onmouseout="m(&#39;search&#39;,0)" href="http://www.cs.washington.edu/info/search/" class="barlink">&nbsp;&nbsp;<img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/wharrow.gif" name="search" border="0" alt="">&nbsp;Search</a></td>
+ <td><a onmouseover="m(&#39;contact&#39;,1)" onmouseout="m(&#39;contact&#39;,0)" href="http://www.cs.washington.edu/info/contact/" class="barlink">&nbsp;&nbsp;<img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/wharrow.gif" name="contact" border="0" alt="">&nbsp;Contact&nbsp;Info&nbsp;</a></td>
+
+ </tr>
+</tbody></table>
+<p>
+<!--begin HTML content-->
+<table width="100%">
+  <tbody><tr> 
+    <td width="33%"> <b>Instructor:</b> <a href="http://www.cs.washington.edu/homes/pedrod/"> Pedro Domingos</a> <br>
+      <b>Office:</b> Allen 648 <br>
+        <b>Office hours:</b> Tuesdays 11:00am-11:50am and by appointment </td>
+    <td width="33%"> <b>TA:</b> <a href="http://yao.lu/">Yao Lu</a> <br>
+      <b>Office:</b> Allen 220 <br>
+      <b>Office hours:</b> Thursdays 11:00am-11:50am and by appointment <br>
+      </td>
+
+  </tr>
+</tbody></table>
+
+</p><p><b>Class meets:</b> <br>
+Tuesdays and Thursdays from 9:30 to 10:50 in EEB 037
+
+<!-- <p><b>Final exam:</b> <br>
+8:30-10:20 a.m.  Thursday, Jun. 11, 2009 in JHN 175
+-->
+</p><h2><font color="blue">Schedule</font></h2>
+
+<table class="sample">
+  <tbody><tr> 
+    <th><b>Week</b> </th>
+    <th><b>Dates</b> </th>
+    <th><b>Topics &amp; Lecture Notes</b></th>
+    <th><b>Readings</b></th>
+  </tr> 
+  <tr> 
+    <td><b>1</b> </td>
+    <td> January 4 </td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/intro.ppt">Introduction</a>, basics of <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/prob.pdf">probability</a> and <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/statest.ppt">statistical estimation</a> </td><td>Ch. 1, 2 &amp; 17</td>
+  </tr> <tr> 
+    <td><b>2</b> </td>
+    <td> January 9 &amp; 11 </td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/mmem.pdf">Mixture models and the EM algorithm</a>
+        <a href="http://see.stanford.edu/materials/aimlcs229/cs229-notes8.pdf">(EM notes)</a></td>
+    <td>Ch. 19</td>
+  </tr> <tr> 
+    <td><b>3</b> </td>
+    <td> January 16 &amp; 18 </td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/hmm.ppt">Hidden Markov models</a> and <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/kalman.pdf">Kalman filters</a></td>
+<td>Ch. 6 (Sec. 6.1 &amp; 6.2) &amp; Ch. 15 (Sec. 15.4.1)</td>
+  </tr> <tr> 
+    <td><b>4</b> </td>
+    <td>January 23 &amp; 25</td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/bnets.pdf">Bayesian networks</a> and <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/mnets.ppt">Markov networks</a></td>
+ <td>Ch. 3 &amp; 4 </td>
+  </tr> <tr> 
+    <td><b>5</b> </td>
+    <td>January 30 &amp; February 1</td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/varel.pdf">Variable elimination</a>, <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/jtbp.ppt">junction trees and belief propagation</a></td>
+    <td>Ch. 9 - 11</td>
+  </tr> <tr> 
+    <td><b>6</b> </td>
+    <td>February 6 &amp; 8</td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/sampling.pdf">Sampling-based inference</a></td>
+    <td>Ch. 12</td>
+  </tr> <tr> 
+    <td><b>7</b> </td>
+    <td>February 13 &amp; 15 </td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/learnbn.ppt">Learning Bayesian networks</a></td>
+     <td>Ch. 16 - 18</td>
+  </tr> <tr> 
+    <td><b>8</b> </td>
+    <td>February 20 &amp; 22</td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/learnmn.ppt">Learning Markov networks</a></td>
+    <td>Ch. 20</td>
+  </tr> <tr> 
+    <td><b>9</b> </td>
+    <td>February 27 &amp; March 1 </td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/dbn.pdf">Dynamic Bayesian networks, particle filtering</a> and <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/relmod.ppt">relational models</a></td>
+    <td>Ch. 15 (Sec. 15.1 - 15.3) &amp; Ch. 6 (Sec. 6.3 &amp; 6.4)</td>
+  </tr> <tr> 
+    <td><b>10</b> </td>
+    <td>March 6 &amp; 8 </td>
+    <td><a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/decth.pdf">Decision theory</a> and <a href="https://courses.cs.washington.edu/courses/cse515/18wi/slides/mdp.pdf">Markov decision processes</a></td>
+    <td>Ch. 22 &amp; 23</td>
+  </tr> 
+</tbody></table>
+<br>
+
+
+<h2><font color="blue">Textbook</font></h2>
+
+D. Koller &amp; N. Friedman, <em><a href="http://pgm.stanford.edu/">Probabilistic Graphical Models: Principles and Techniques</a></em>, MIT Press (required).<br>
+
+<h2><font color="blue">Assignments</font></h2>
+There will be four homework assignments, each worth 25% of the final grade. The homeworks include programming.  Homework
+assignments will be handed out after weeks 2, 4, 6, 8, and will be due two
+weeks later.
+
+<ul>
+	<li><a href="https://courses.cs.washington.edu/courses/cse515/18wi/HW1.pdf">Assignment 1</a>, due at <b>12:01am</b>
+      on January 30th.<br>
+		Data: 
+		<a href="https://courses.cs.washington.edu/courses/cse515/18wi/vehicle.train">vehicle.train</a>, 
+		<a href="https://courses.cs.washington.edu/courses/cse515/18wi/vehicle.test">vehicle.test</a>. <br>
+		See also: <a href="http://archive.ics.uci.edu/ml/datasets/Statlog+%28Vehicle+Silhouettes%29"> Vehicle silhouettes dataset</a> at the UCI Machine learning repository
+	</li>
+	<li><a href="https://courses.cs.washington.edu/courses/cse515/18wi/HW2.pdf">Assignment 2</a>, due at <b>12:01am</b> on February 13th.<br>
+          Data and code: <a href="https://courses.cs.washington.edu/courses/cse515/18wi/Package.zip">Package.zip</a>
+	</li>
+	<li><a href="https://courses.cs.washington.edu/courses/cse515/18wi/HW3.pdf">Assignment 3</a>, due at <b>12:01am</b> on February 27th.<br>
+          Data and code: <a href="https://courses.cs.washington.edu/courses/cse515/18wi/seg.zip">seg.zip</a>.<br>
+	  See <a href="http://www.psi.toronto.edu/pubs/2001/frey2001factor.pdf">
+	    Kschischang et al.</a> for a detailed explanation of BP.
+	</li>
+	<li><a href="https://courses.cs.washington.edu/courses/cse515/18wi/HW4.pdf">Assignment 4</a>, due at <b>12:01am</b>
+      on March 13th.
+	</li>
+</ul> 
+
+<h2><font color="blue">Canvas</font></h2>
+We will use UW <a href="https://canvas.uw.edu/courses/1124235">Canvas</a> to collect homework, keep the gradebook and make announcements.<br>  
+
+
+<h2><font color="blue">Course Administration and Policies</font></h2>
+<ul>
+<li>Assignments will be done individually unless otherwise specified.  You may discuss the subject matter with other students in the class, 
+but all final answers must be your own work. You are expected to maintain the utmost level of academic integrity in the course.</li>
+<li>Assignments may be handed in up to a week late, at a penalty of 10% of the maximum grade per day.</li>
+<li>Discuss course material on the <a href="https://canvas.uw.edu/courses/1124235/discussion_topics">forum</a>.</li>
+</ul>
+
+
+
+<!--end HTML content-->
+
+<p>
+<table width="100%" cellpadding="0" border="0" cellspacing="0">
+<tbody><tr><td colspan="2"><hr noshade="noshade" size="2"></td></tr>
+<tr align="center" valign="middle">
+ <td width="15%"><a href="https://courses.cs.washington.edu/"><img src="./CSE 515 - Statistical Methods in Computer Science - Winter 2018_files/logo.png" width="34" height="33" alt="CSE logo" border="0"></a></td>
+ <td width="85%"><span style="font-family: helvetica, arial, sans-serif; font-size: 13px; text-decoration: none">
+ Computer&nbsp;Science&nbsp;&amp;&nbsp;Engineering<br>
+
+ University&nbsp;of&nbsp;Washington<br>
+ Box&nbsp;352350<br>
+ Seattle,&nbsp;WA&nbsp;&nbsp;98195-2350<br>
+ (206)&nbsp;543-1695&nbsp;voice,&nbsp;(206)&nbsp;543-2969&nbsp;FAX<br>
+
+<!--[comments to <em><a href="/htbin-post/unrestricted/mailto2.pl?to=chloe;sub=UW+CSE+Web:+CSE+515+-+Statistical+Methods+in+Computer+Science+-+Winter+2016">Yuyin</a></em>]--></span>
+ </td></tr>
+</tbody></table>
+
+
+
+</p>
+</body></html>
