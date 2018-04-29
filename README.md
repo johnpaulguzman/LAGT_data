@@ -8,6 +8,7 @@ Installation for R:
     $ biocLite(c("graph", "Rgraphviz", "RBGL"))
     $ install.packages("gRain")
     $ install.packages("bnlearn")
+    $ install.packages('R.utils')
 
 Usage for GeNIe Academic:
   Open network file:
