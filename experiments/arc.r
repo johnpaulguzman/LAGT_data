@@ -6,8 +6,8 @@ library("bnlearn")
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
-strength_threshold = 0.20
-max_time = 1
+strength_threshold = 0.10
+max_time = 1200
 empirical_dataset_1 = "data_exam1.csv"
 empirical_dataset_2 = "data_exam2.csv"
 
