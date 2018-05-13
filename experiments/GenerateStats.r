@@ -8,10 +8,10 @@ library("bnlearn")
 setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
 saved_networks = list()
 saved_parameters = list()
-read_timeout = 30
-expected_file = "BN15a-B1_2.dsc"
-folder_path = "./outputs/"
-output_file = "./outputs/statistics.txt"
+strength_arcs = list()
+read_timeout = 100
+expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+folder_path = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 empirical_dataset_1 = "data_exam1.csv"
 empirical_dataset_2 = "data_exam2.csv"
 empirical_dataset_3 = "data_exam3.csv"
@@ -23,18 +23,21 @@ empirical_data_2 = read.csv(empirical_dataset_2, check.names=FALSE, na.strings=c
 empirical_data_3 = read.csv(empirical_dataset_3, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
 
 # Filter noise 
-empirical_data = rbind(empirical_data_2, empirical_data_1, empirical_data_3)
+#empirical_data = rbind(empirical_data_2, empirical_data_1, empirical_data_3)
+empirical_data = rbind(empirical_data_2) ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 empirical_data = within(empirical_data, rm("ID"))
-empirical_data = empirical_data[complete.cases(empirical_data), ]  # CV can only test on complete entries
+#empirical_data = empirical_data[complete.cases(empirical_data), ]  # CV can only test on complete entries
 
 ## <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ## SET UP <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-sink(output_file)
-Sys.time()
+output_file = paste(folder_path, "statistics.txt", sep="")
 expected_network = bn.net(read.dsc(expected_file))
+expected_fit = bn.fit(expected_network, empirical_data)
+saved_networks[["Expected"]] = expected_network
+saved_parameters[["Expected"]] = saved_parameters
+#imputed_data = impute(object=expected_fit, data=empirical_data, method="parents")
 detected_files = list.files(path=folder_path, pattern="*.dsc")
-
 for (file in detected_files) {
     filepath = paste(folder_path, file, sep="")
     idx = substr(file, 1, nchar(file) - 4)
@@ -46,6 +49,8 @@ for (file in detected_files) {
 }
 
 print("===== DATA FOR STRUCTURAL DIFFERENCES & CROSS VALIDATION =====")
+sink(output_file)
+Sys.time()
 for (idx in names(saved_networks)) {
     net_hamming = hamming(expected_network, saved_networks[[idx]])
     net_shd = shd(expected_network, saved_networks[[idx]])
@@ -54,9 +59,29 @@ for (idx in names(saved_networks)) {
     print(paste(">> Index:", idx, " -- || -- Hamming distance:", net_hamming, ", Structural Hamming distance:", net_shd, " -- || -- Mean error:", mean_error))
 }
 
-cv_runs2 = bn.cv(data=empirical_data, bn=expected_network, k=10, runs=10)
-mean_error2 = mean(sapply(cv_runs2, function(x) attr(x, "mean")))
-print(paste(">> Index: Expected Network -- || -- Mean error:", mean_error2))
-
-sink()
+for(i in seq_len(sink.number())){print(sink(NULL))}
 print(paste("Logged to:", output_file))
+
+##############################################################################
+
+print("===== DATA FOR ARC STRENGTH MEASUREMENTS =====")
+for (idx in names(saved_networks)) {
+    empirical_file = paste(folder_path, idx, "_arcs.txt", sep="")
+    if (!file.exists(empirical_file)){
+        sink(empirical_file)
+        tryCatch({
+            strength_arcs[[idx]] = withTimeout(
+                arc.strength(x=saved_networks[[idx]], data=empirical_data),
+                timeout=read_timeout)
+            print(paste(">>> Arcs of", idx, "<<<"))
+            print(strength_arcs[[idx]][order(-strength_arcs[[idx]]$strength), ])
+        }, error=function(e){print(paste("!! ERROR :", conditionMessage(e), "\n"))})
+        sink()
+    } else {
+        print(paste(empirical_file, "already exists!"))
+    }
+}
+
+##############################################################################
+
+for(i in seq_len(sink.number())){print(sink(NULL))}

@@ -12,8 +12,8 @@ library("bnlearn")
 setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
 max_time = 200
 learned_networks = list()
-expected_file = "BN15a-B1_2.dsc"
-output_directory = "./outputs/"
+expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+output_directory = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 empirical_dataset_1 = "data_exam1.csv"
 empirical_dataset_2 = "data_exam2.csv"
 empirical_dataset_3 = "data_exam3.csv"
@@ -25,7 +25,8 @@ empirical_data_2 = read.csv(empirical_dataset_2, check.names=FALSE, na.strings=c
 empirical_data_3 = read.csv(empirical_dataset_3, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
 
 # Filter noise 
-empirical_data = rbind(empirical_data_2, empirical_data_1, empirical_data_3)
+#empirical_data = rbind(empirical_data_2, empirical_data_1, empirical_data_3)
+empirical_data = rbind(empirical_data_2) ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 empirical_data = within(empirical_data, rm("ID"))
 
 ## <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
