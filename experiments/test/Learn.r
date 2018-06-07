@@ -9,7 +9,7 @@ library("bnlearn")
 ## SET UP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
+setwd("C:/Users/JP/Desktop/LAGT_data/experiments/test/")
 max_time = 200
 learned_networks = list()
 expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -41,9 +41,6 @@ if (!Reduce("&", match_columns)) { # checks if all columns match
 } else {
     print("Successfully matched columns.")
 }
-
-expected_fit = bn.fit(expected_network, empirical_data)
-write.dsc(paste(output_directory, "Expected_network.dsc", sep=""), expected_fit)
 
 score_based_algorithms = c("hc", "tabu")
 scores = c("loglik", "aic", "bic", "bde", "bds", "bdj", "k2", "mbde", "bdla")

@@ -1,0 +1,1222 @@
+> expected_fit
+
+  Bayesian network parameters
+
+  Parameters of node keyid (multinomial distribution)
+
+Conditional probability table:
+    Known NotKnown 
+  0.8625   0.1375 
+
+  Parameters of node dtype (multinomial distribution)
+
+Conditional probability table:
+    Known NotKnown 
+  0.9375   0.0625 
+
+  Parameters of node vars (multinomial distribution)
+
+Conditional probability table:
+ 
+, , dtype = Known
+
+          keyid
+vars            Known   NotKnown
+  Known    0.98550725 0.33333333
+  NotKnown 0.01449275 0.66666667
+
+, , dtype = NotKnown
+
+          keyid
+vars       Known   NotKnown
+  Known          0.20000000
+  NotKnown       0.80000000
+
+
+  Parameters of node block (multinomial distribution)
+
+Conditional probability table:
+    Known NotKnown 
+   0.725    0.275 
+
+  Parameters of node decl (multinomial distribution)
+
+Conditional probability table:
+ 
+, , vars = Known, block = Known
+
+          dtype
+decl            Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , vars = NotKnown, block = Known
+
+          dtype
+decl            Known NotKnown
+  Known    0.00000000         
+  NotKnown 1.00000000         
+
+, , vars = Known, block = NotKnown
+
+          dtype
+decl            Known   NotKnown
+  Known    0.92857143 0.00000000
+  NotKnown 0.07142857 1.00000000
+
+, , vars = NotKnown, block = NotKnown
+
+          dtype
+decl            Known   NotKnown
+  Known    0.00000000 0.00000000
+  NotKnown 1.00000000 1.00000000
+
+
+  Parameters of node varscop (multinomial distribution)
+
+Conditional probability table:
+ 
+, , decl = Known
+
+          block
+varscop         Known   NotKnown
+  Known    0.96428571 0.84615385
+  NotKnown 0.03571429 0.15384615
+
+, , decl = NotKnown
+
+          block
+varscop         Known   NotKnown
+  Known    1.00000000 0.33333333
+  NotKnown 0.00000000 0.66666667
+
+
+  Parameters of node constr (multinomial distribution)
+
+Conditional probability table:
+ 
+, , block = Known, varscop = Known
+
+          keyid
+constr         Known  NotKnown
+  Known    0.8727273 1.0000000
+  NotKnown 0.1272727 0.0000000
+
+, , block = NotKnown, varscop = Known
+
+          keyid
+constr         Known  NotKnown
+  Known    0.3636364 0.3333333
+  NotKnown 0.6363636 0.6666667
+
+, , block = Known, varscop = NotKnown
+
+          keyid
+constr         Known NotKnown
+  Known    1.0000000         
+  NotKnown 0.0000000         
+
+, , block = NotKnown, varscop = NotKnown
+
+          keyid
+constr         Known  NotKnown
+  Known    0.0000000 0.0000000
+  NotKnown 1.0000000 1.0000000
+
+
+  Parameters of node opaspr (multinomial distribution)
+
+Conditional probability table:
+ 
+          dtype
+opaspr          Known   NotKnown
+  Known    0.94666667 0.00000000
+  NotKnown 0.05333333 1.00000000
+
+  Parameters of node arith (multinomial distribution)
+
+Conditional probability table:
+ 
+          opaspr
+arith           Known   NotKnown
+  Known    0.90140845 0.00000000
+  NotKnown 0.09859155 1.00000000
+
+  Parameters of node assgn (multinomial distribution)
+
+Conditional probability table:
+ 
+          opaspr
+assgn          Known  NotKnown
+  Known    1.0000000 0.2222222
+  NotKnown 0.0000000 0.7777778
+
+  Parameters of node constl (multinomial distribution)
+
+Conditional probability table:
+ 
+          dtype
+constl     Known NotKnown
+  Known     0.92     0.60
+  NotKnown  0.08     0.40
+
+  Parameters of node logrel (multinomial distribution)
+
+Conditional probability table:
+ 
+          opaspr
+logrel          Known   NotKnown
+  Known    0.98591549 0.00000000
+  NotKnown 0.01408451 1.00000000
+
+  Parameters of node exprn (multinomial distribution)
+
+Conditional probability table:
+ 
+, , vars = Known, opaspr = Known, arith = Known, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn           Known NotKnown
+  Known    0.94915254         
+  NotKnown 0.05084746         
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn           Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn           Known NotKnown
+  Known    0.83333333         
+  NotKnown 0.16666667         
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn           Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn           Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = Known
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn           Known NotKnown
+  Known    0.00000000         
+  NotKnown 1.00000000         
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn      Known   NotKnown
+  Known          0.00000000
+  NotKnown       1.00000000
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = Known, logrel = NotKnown
+
+          dtype
+exprn           Known   NotKnown
+  Known    0.00000000 0.00000000
+  NotKnown 1.00000000 1.00000000
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn           Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn           Known NotKnown
+  Known    0.00000000         
+  NotKnown 1.00000000         
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = Known, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = Known, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = Known, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = Known, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn      Known NotKnown
+  Known                  
+  NotKnown               
+
+, , vars = NotKnown, opaspr = NotKnown, arith = NotKnown, assgn = NotKnown, constl = NotKnown, logrel = NotKnown
+
+          dtype
+exprn           Known   NotKnown
+  Known    0.00000000 0.00000000
+  NotKnown 1.00000000 1.00000000
+
+
+  Parameters of node ampas (multinomial distribution)
+
+Conditional probability table:
+ 
+, , opaspr = Known
+
+          vars
+ampas          Known  NotKnown
+  Known    0.8970588 1.0000000
+  NotKnown 0.1029412 0.0000000
+
+, , opaspr = NotKnown
+
+          vars
+ampas          Known  NotKnown
+  Known    0.0000000 0.1666667
+  NotKnown 1.0000000 0.8333333
+
+
+  Parameters of node sequen (multinomial distribution)
+
+Conditional probability table:
+ 
+          constr
+sequen          Known   NotKnown
+  Known    0.96428571 0.37500000
+  NotKnown 0.03571429 0.62500000
+
+  Parameters of node itcpt (multinomial distribution)
+
+Conditional probability table:
+ 
+, , exprn = Known
+
+          constr
+itcpt          Known  NotKnown
+  Known    1.0000000 0.7692308
+  NotKnown 0.0000000 0.2307692
+
+, , exprn = NotKnown
+
+          constr
+itcpt          Known  NotKnown
+  Known    0.0000000 0.0000000
+  NotKnown 1.0000000 1.0000000
+
+
+  Parameters of node selcpt (multinomial distribution)
+
+Conditional probability table:
+ 
+, , exprn = Known
+
+          constr
+selcpt          Known   NotKnown
+  Known    1.00000000 0.92307692
+  NotKnown 0.00000000 0.07692308
+
+, , exprn = NotKnown
+
+          constr
+selcpt          Known   NotKnown
+  Known    0.50000000 0.09090909
+  NotKnown 0.50000000 0.90909091
+
+
+  Parameters of node fncs (multinomial distribution)
+
+Conditional probability table:
+ 
+, , constr = Known
+
+          dtype
+fncs            Known NotKnown
+  Known    0.98214286         
+  NotKnown 0.01785714         
+
+, , constr = NotKnown
+
+          dtype
+fncs            Known   NotKnown
+  Known    0.63157895 0.00000000
+  NotKnown 0.36842105 1.00000000
+
+
+  Parameters of node pasaddr (multinomial distribution)
+
+Conditional probability table:
+ 
+          ampas
+pasaddr        Known  NotKnown
+  Known    0.5692308 0.3333333
+  NotKnown 0.4307692 0.6666667
+
+  Parameters of node fncpar (multinomial distribution)
+
+Conditional probability table:
+ 
+, , exprn = Known, pasaddr = Known
+
+          dtype
+fncpar          Known NotKnown
+  Known    0.97560976         
+  NotKnown 0.02439024         
+
+, , exprn = NotKnown, pasaddr = Known
+
+          dtype
+fncpar          Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , exprn = Known, pasaddr = NotKnown
+
+          dtype
+fncpar          Known NotKnown
+  Known    0.88461538         
+  NotKnown 0.11538462         
+
+, , exprn = NotKnown, pasaddr = NotKnown
+
+          dtype
+fncpar          Known   NotKnown
+  Known    0.00000000 0.00000000
+  NotKnown 1.00000000 1.00000000
+
+
+  Parameters of node fncpro (multinomial distribution)
+
+Conditional probability table:
+ 
+          decl
+fncpro         Known  NotKnown
+  Known    0.7536232 0.1818182
+  NotKnown 0.2463768 0.8181818
+
+  Parameters of node nestit (multinomial distribution)
+
+Conditional probability table:
+ 
+, , itcpt = Known
+
+          block
+nestit         Known  NotKnown
+  Known    0.8103448 0.1666667
+  NotKnown 0.1896552 0.8333333
+
+, , itcpt = NotKnown
+
+          block
+nestit     Known  NotKnown
+  Known          0.0625000
+  NotKnown       0.9375000
+
+
+  Parameters of node multi (multinomial distribution)
+
+Conditional probability table:
+ 
+, , selcpt = Known
+
+          block
+multi           Known   NotKnown
+  Known    0.98275862 0.70000000
+  NotKnown 0.01724138 0.30000000
+
+, , selcpt = NotKnown
+
+          block
+multi      Known   NotKnown
+  Known          0.00000000
+  NotKnown       1.00000000
+
+
+  Parameters of node init (multinomial distribution)
+
+Conditional probability table:
+ 
+          assgn
+init           Known  NotKnown
+  Known    0.8082192 0.0000000
+  NotKnown 0.1917808 1.0000000
+
+  Parameters of node incdcr (multinomial distribution)
+
+Conditional probability table:
+ 
+, , assgn = Known
+
+          arith
+incdcr         Known  NotKnown
+  Known    0.9375000 0.6666667
+  NotKnown 0.0625000 0.3333333
+
+, , assgn = NotKnown
+
+          arith
+incdcr     Known  NotKnown
+  Known          0.0000000
+  NotKnown       1.0000000
+
+
+  Parameters of node countit (multinomial distribution)
+
+Conditional probability table:
+ 
+, , init = Known, incdcr = Known
+
+          itcpt
+countit         Known NotKnown
+  Known    0.96551724         
+  NotKnown 0.03448276         
+
+, , init = NotKnown, incdcr = Known
+
+          itcpt
+countit         Known   NotKnown
+  Known    0.66666667 0.00000000
+  NotKnown 0.33333333 1.00000000
+
+, , init = Known, incdcr = NotKnown
+
+          itcpt
+countit    Known   NotKnown
+  Known          1.00000000
+  NotKnown       0.00000000
+
+, , init = NotKnown, incdcr = NotKnown
+
+          itcpt
+countit    Known   NotKnown
+  Known          0.00000000
+  NotKnown       1.00000000
+
+
+  Parameters of node eventit (multinomial distribution)
+
+Conditional probability table:
+ 
+          itcpt
+eventit      Known NotKnown
+  Known    0.90625  0.06250
+  NotKnown 0.09375  0.93750
+
+  Parameters of node switch (multinomial distribution)
+
+Conditional probability table:
+ 
+          multi
+switch       Known NotKnown
+  Known    0.96875  0.12500
+  NotKnown 0.03125  0.87500
+
+  Parameters of node fncdef (multinomial distribution)
+
+Conditional probability table:
+ 
+, , fncpar = Known, fncpro = Known
+
+          fncs
+fncdef          Known NotKnown
+  Known    0.98148148         
+  NotKnown 0.01851852         
+
+, , fncpar = NotKnown, fncpro = Known
+
+          fncs
+fncdef     Known NotKnown
+  Known                  
+  NotKnown               
+
+, , fncpar = Known, fncpro = NotKnown
+
+          fncs
+fncdef          Known   NotKnown
+  Known    0.33333333 0.00000000
+  NotKnown 0.66666667 1.00000000
+
+, , fncpar = NotKnown, fncpro = NotKnown
+
+          fncs
+fncdef          Known   NotKnown
+  Known    0.25000000 0.00000000
+  NotKnown 0.75000000 1.00000000
+
+
+  Parameters of node exitlp (multinomial distribution)
+
+Conditional probability table:
+ 
+          eventit
+exitlp          Known   NotKnown
+  Known    0.94915254 0.57142857
+  NotKnown 0.05084746 0.42857143
+
+  Parameters of node return (multinomial distribution)
+
+Conditional probability table:
+ 
+, , switch = Known, fncdef = Known, exitlp = Known
+
+          itcpt
+return         Known  NotKnown
+  Known    0.8490566 0.0000000
+  NotKnown 0.1509434 1.0000000
+
+, , switch = NotKnown, fncdef = Known, exitlp = Known
+
+          itcpt
+return     Known NotKnown
+  Known                  
+  NotKnown               
+
+, , switch = Known, fncdef = NotKnown, exitlp = Known
+
+          itcpt
+return         Known NotKnown
+  Known    0.1428571         
+  NotKnown 0.8571429         
+
+, , switch = NotKnown, fncdef = NotKnown, exitlp = Known
+
+          itcpt
+return         Known  NotKnown
+  Known    0.0000000 0.0000000
+  NotKnown 1.0000000 1.0000000
+
+, , switch = Known, fncdef = Known, exitlp = NotKnown
+
+          itcpt
+return         Known NotKnown
+  Known    1.0000000         
+  NotKnown 0.0000000         
+
+, , switch = NotKnown, fncdef = Known, exitlp = NotKnown
+
+          itcpt
+return     Known NotKnown
+  Known                  
+  NotKnown               
+
+, , switch = Known, fncdef = NotKnown, exitlp = NotKnown
+
+          itcpt
+return     Known NotKnown
+  Known                  
+  NotKnown               
+
+, , switch = NotKnown, fncdef = NotKnown, exitlp = NotKnown
+
+          itcpt
+return     Known  NotKnown
+  Known          0.0000000
+  NotKnown       1.0000000
+
+
+  Parameters of node break (multinomial distribution)
+
+Conditional probability table:
+ 
+, , switch = Known, exitlp = Known
+
+          itcpt
+break           Known   NotKnown
+  Known    0.98333333 1.00000000
+  NotKnown 0.01666667 0.00000000
+
+, , switch = NotKnown, exitlp = Known
+
+          itcpt
+break           Known   NotKnown
+  Known    0.00000000 0.00000000
+  NotKnown 1.00000000 1.00000000
+
+, , switch = Known, exitlp = NotKnown
+
+          itcpt
+break           Known NotKnown
+  Known    1.00000000         
+  NotKnown 0.00000000         
+
+, , switch = NotKnown, exitlp = NotKnown
+
+          itcpt
+break      Known   NotKnown
+  Known          0.00000000
+  NotKnown       1.00000000
+
+
+  Parameters of node ifelse (multinomial distribution)
+
+Conditional probability table:
+ 
+, , multi = Known
+
+          selcpt
+ifelse         Known NotKnown
+  Known    0.9687500         
+  NotKnown 0.0312500         
+
+, , multi = NotKnown
+
+          selcpt
+ifelse         Known  NotKnown
+  Known    0.2500000 0.1666667
+  NotKnown 0.7500000 0.8333333
+
+
+  Parameters of node callfnc (multinomial distribution)
+
+Conditional probability table:
+ 
+, , fncpro = Known, fncdef = Known
+
+          fncpar
+callfnc        Known NotKnown
+  Known    1.0000000         
+  NotKnown 0.0000000         
+
+, , fncpro = NotKnown, fncdef = Known
+
+          fncpar
+callfnc        Known  NotKnown
+  Known    1.0000000 0.0000000
+  NotKnown 0.0000000 1.0000000
+
+, , fncpro = Known, fncdef = NotKnown
+
+          fncpar
+callfnc        Known NotKnown
+  Known    1.0000000         
+  NotKnown 0.0000000         
+
+, , fncpro = NotKnown, fncdef = NotKnown
+
+          fncpar
+callfnc        Known  NotKnown
+  Known    0.8571429 0.1333333
+  NotKnown 0.1428571 0.8666667
+
+
+  Parameters of node stdio (multinomial distribution)
+
+Conditional probability table:
+ 
+          fncpro
+stdio           Known   NotKnown
+  Known    0.92592593 0.69230769
+  NotKnown 0.07407407 0.30769231
+
+  Parameters of node lrvalue (multinomial distribution)
+
+Conditional probability table:
+ 
+          assgn
+lrvalue    Known NotKnown
+  Known        1        0
+  NotKnown     0        1
+
+  Parameters of node scanf (multinomial distribution)
+
+Conditional probability table:
+ 
+, , callfnc = Known, stdio = Known
+
+          pasaddr
+scanf          Known  NotKnown
+  Known    0.9750000 1.0000000
+  NotKnown 0.0250000 0.0000000
+
+, , callfnc = NotKnown, stdio = Known
+
+          pasaddr
+scanf      Known  NotKnown
+  Known          0.7777778
+  NotKnown       0.2222222
+
+, , callfnc = Known, stdio = NotKnown
+
+          pasaddr
+scanf          Known  NotKnown
+  Known    1.0000000 1.0000000
+  NotKnown 0.0000000 0.0000000
+
+, , callfnc = NotKnown, stdio = NotKnown
+
+          pasaddr
+scanf      Known  NotKnown
+  Known          0.3333333
+  NotKnown       0.6666667
+
+
+  Parameters of node printf (multinomial distribution)
+
+Conditional probability table:
+ 
+, , callfnc = Known, stdio = Known
+
+          pasaddr
+printf          Known   NotKnown
+  Known    1.00000000 0.94736842
+  NotKnown 0.00000000 0.05263158
+
+, , callfnc = NotKnown, stdio = Known
+
+          pasaddr
+printf     Known   NotKnown
+  Known          0.55555556
+  NotKnown       0.44444444
+
+, , callfnc = Known, stdio = NotKnown
+
+          pasaddr
+printf          Known   NotKnown
+  Known    1.00000000 0.50000000
+  NotKnown 0.00000000 0.50000000
+
+, , callfnc = NotKnown, stdio = NotKnown
+
+          pasaddr
+printf     Known   NotKnown
+  Known          0.00000000
+  NotKnown       1.00000000
+
+
+  Parameters of node ifseri (multinomial distribution)
+
+Conditional probability table:
+ 
+          multi
+ifseri      Known NotKnown
+  Known    0.9375   0.2500
+  NotKnown 0.0625   0.7500
+
+  Parameters of node elseif (multinomial distribution)
+
+Conditional probability table:
+ 
+, , ifelse = Known
+
+          multi
+elseif          Known   NotKnown
+  Known    0.98387097 0.66666667
+  NotKnown 0.01612903 0.33333333
+
+, , ifelse = NotKnown
+
+          multi
+elseif          Known   NotKnown
+  Known    0.00000000 0.15384615
+  NotKnown 1.00000000 0.84615385
+
+
+  Parameters of node beflp (multinomial distribution)
+
+Conditional probability table:
+ 
+          eventit
+beflp           Known   NotKnown
+  Known    0.98305085 0.00000000
+  NotKnown 0.01694915 1.00000000
+
+  Parameters of node endlp (multinomial distribution)
+
+Conditional probability table:
+ 
+          eventit
+endlp           Known   NotKnown
+  Known    0.94915254 0.04761905
+  NotKnown 0.05084746 0.95238095
+
+  Parameters of node default (multinomial distribution)
+
+Conditional probability table:
+ 
+          switch
+default       Known NotKnown
+  Known    0.953125 0.000000
+  NotKnown 0.046875 1.000000
+
+  Parameters of node prepost (multinomial distribution)
+
+Conditional probability table:
+ 
+, , endlp = Known
+
+          beflp
+prepost         Known   NotKnown
+  Known    0.94545455 0.00000000
+  NotKnown 0.05454545 1.00000000
+
+, , endlp = NotKnown
+
+          beflp
+prepost         Known   NotKnown
+  Known    0.33333333 0.20000000
+  NotKnown 0.66666667 0.80000000
+

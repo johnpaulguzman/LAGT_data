@@ -5,7 +5,7 @@ library("bnlearn")
 ## SET UP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
+setwd("C:/Users/JP/Desktop/LAGT_data/experiments/test/")
 saved_networks = list()
 saved_parameters = list()
 strength_arcs = list()
@@ -54,7 +54,7 @@ Sys.time()
 for (idx in names(saved_networks)) {
     net_hamming = hamming(expected_network, saved_networks[[idx]])
     net_shd = shd(expected_network, saved_networks[[idx]])
-    cv_runs = bn.cv(data=empirical_data, bn=saved_networks[[idx]], k=10, runs=100)
+    cv_runs = bn.cv(data=empirical_data, bn=saved_networks[[idx]], k=10, runs=10)
     mean_error = mean(sapply(cv_runs, function(x) attr(x, "mean")))
     print(paste(">> Index:", idx, " -- || -- Hamming distance:", net_hamming, ", Structural Hamming distance:", net_shd, " -- || -- Mean error:", mean_error))
 }
