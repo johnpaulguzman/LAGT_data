@@ -5,7 +5,7 @@ library("bnlearn")
 ## SET UP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
+#setwd(file.path(getwd(), "experiments"))
 saved_networks = list()
 saved_parameters = list()
 strength_arcs = list()

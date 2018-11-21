@@ -9,9 +9,12 @@ library("bnlearn")
 ## SET UP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-setwd("C:/Users/JP/Desktop/LAGT_data/experiments/")
+#setwd(file.path(getwd(), "experiments"))
 max_time = 200
 learned_networks = list()
+saved_networks = list()
+saved_parameters = list()
+read_timeout = 100
 expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 output_directory = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 empirical_dataset_1 = "data_exam1.csv"
@@ -50,7 +53,7 @@ scores = c("loglik", "aic", "bic", "bde", "bds", "bdj", "k2", "mbde", "bdla")
 for (algorithm in score_based_algorithms){ for (score in scores) {
     idx = paste(algorithm, "_", score, sep="")
     empirical_file = paste(output_directory, idx, "_network.dsc", sep="")
-    if (!file.exists(empirical_file)){
+    if (!file.exists(empirical_file)) {
         tryCatch({
             print(idx)
             learned_networks[[idx]] = withTimeout(
@@ -65,5 +68,34 @@ for (algorithm in score_based_algorithms){ for (score in scores) {
         }, error=function(e){print(paste("!! ERROR :", conditionMessage(e), "\n"))})
     } else {
         print(paste(empirical_file, "already exists!"))
+        tryCatch({
+            saved_parameters[[idx]] = withTimeout(read.dsc(empirical_file, debug=FALSE), timeout=read_timeout)
+            saved_networks[[idx]] = withTimeout(bn.net(saved_parameters[[idx]]), timeout=read_timeout)
+            print(paste("Loaded:", empirical_file))
+            network_pdf = paste(empirical_file, ".pdf", sep="")
+            pdf(network_pdf)
+            graphviz.plot(saved_networks[[idx]])
+            dev.off()
+            print(paste("PDF generated:", network_pdf))
+        }, error=function(e){print(paste("!! ERROR :", conditionMessage(e), "\n"))})
     }
 }}
+
+
+if(FALSE) { # multiline comment
+chooseCRANmirror() # > Choose US Mirror
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("graph", "Rgraphviz", "RBGL"))
+install.packages(c("gRain", "bnlearn", "R.utils"))
+################################################# 
+source("Learn.r")
+names(saved_networks)
+sample_network = saved_networks[["hc_loglik"]]
+graphviz.plot(sample_network)
+# TODO: include expected pdfs
+expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+expected_network = bn.net(read.dsc(expected_file))
+expected_fit = bn.fit(expected_network, empirical_data)
+saved_networks[["Expected"]] = expected_network
+saved_parameters[["Expected"]] = saved_parameters
+}
