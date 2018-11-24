@@ -26,3 +26,13 @@ http://www.ucdenver.edu/academics/colleges/PublicHealth/Academics/departments/Bi
 http://www.bnlearn.com/documentation/man/bnlearn-package.html
 http://www.bnlearn.com/book-useR/ | pp. 35
 http://www.bnlearn.com/about/slides/slides-useRconf13.pdf
+=============================================
+
+
+http://www.bnlearn.com/documentation/topics.html
+http://www.bnlearn.com/documentation/man/bnlearn-package.html
+http://www.bnlearn.com/documentation/man/structural.em.html
+
+separate 90% vs 100%
+separate experiment not known vs missing data 
+refactor, data preprocessing
