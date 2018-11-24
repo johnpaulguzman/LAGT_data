@@ -36,3 +36,4 @@ http://www.bnlearn.com/documentation/man/structural.em.html
 separate 90% vs 100%
 separate experiment not known vs missing data 
 refactor, data preprocessing
+
