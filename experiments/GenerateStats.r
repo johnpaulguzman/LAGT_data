@@ -4,27 +4,20 @@ library("bnlearn")
 
 ## SET UP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 #setwd(file.path(getwd(), "experiments"))
+
+expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+folder_path = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+empirical_dataset_2 = "data_exam2.csv" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 saved_networks = list()
 saved_parameters = list()
 strength_arcs = list()
 read_timeout = 100
-expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-folder_path = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-empirical_dataset_1 = "data_exam1.csv"
-empirical_dataset_2 = "data_exam2.csv"
-empirical_dataset_3 = "data_exam3.csv"
 
 ## Process files
 expected_network = bn.net(read.dsc(expected_file))
-empirical_data_1 = read.csv(empirical_dataset_1, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
 empirical_data_2 = read.csv(empirical_dataset_2, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
-empirical_data_3 = read.csv(empirical_dataset_3, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
-
-# Filter noise 
-#empirical_data = rbind(empirical_data_2, empirical_data_1, empirical_data_3)
-empirical_data = rbind(empirical_data_2) ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+empirical_data = rbind(empirical_data_2)
 empirical_data = within(empirical_data, rm("ID"))
 #empirical_data = empirical_data[complete.cases(empirical_data), ]  # CV can only test on complete entries
 
@@ -63,25 +56,23 @@ for(i in seq_len(sink.number())){print(sink(NULL))}
 print(paste("Logged to:", output_file))
 
 ##############################################################################
-
-print("===== DATA FOR ARC STRENGTH MEASUREMENTS =====")
-for (idx in names(saved_networks)) {
-    empirical_file = paste(folder_path, idx, "_arcs.txt", sep="")
-    if (!file.exists(empirical_file)){
-        sink(empirical_file)
-        tryCatch({
-            strength_arcs[[idx]] = withTimeout(
-                arc.strength(x=saved_networks[[idx]], data=empirical_data),
-                timeout=read_timeout)
-            print(paste(">>> Arcs of", idx, "<<<"))
-            print(strength_arcs[[idx]][order(-strength_arcs[[idx]]$strength), ])
-        }, error=function(e){print(paste("!! ERROR :", conditionMessage(e), "\n"))})
-        sink()
-    } else {
-        print(paste(empirical_file, "already exists!"))
-    }
-}
-
+#print("===== DATA FOR ARC STRENGTH MEASUREMENTS =====")
+#for (idx in names(saved_networks)) {
+#    empirical_file = paste(folder_path, idx, "_arcs.txt", sep="")
+#    if (!file.exists(empirical_file)){
+#        sink(empirical_file)
+#        tryCatch({
+#            strength_arcs[[idx]] = withTimeout(
+#                arc.strength(x=saved_networks[[idx]], data=empirical_data),
+#                timeout=read_timeout)
+#            print(paste(">>> Arcs of", idx, "<<<"))
+#            print(strength_arcs[[idx]][order(-strength_arcs[[idx]]$strength), ])
+#        }, error=function(e){print(paste("!! ERROR :", conditionMessage(e), "\n"))})
+#        sink()
+#    } else {
+#        print(paste(empirical_file, "already exists!"))
+#    }
+#}
 ##############################################################################
 
 for(i in seq_len(sink.number())){print(sink(NULL))}

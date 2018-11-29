@@ -8,28 +8,21 @@ library("bnlearn")
 
 ## SET UP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 #setwd(file.path(getwd(), "experiments"))
+
+expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+output_directory = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+empirical_dataset_2 = "data_exam2.csv" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 max_time = 200
 learned_networks = list()
 saved_networks = list()
 saved_parameters = list()
 read_timeout = 100
-expected_file = "BN15a-B1_2.dsc" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-output_directory = "./outputs2/" ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-empirical_dataset_1 = "data_exam1.csv"
-empirical_dataset_2 = "data_exam2.csv"
-empirical_dataset_3 = "data_exam3.csv"
 
 ## Process files
 expected_network = bn.net(read.dsc(expected_file))
-empirical_data_1 = read.csv(empirical_dataset_1, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
 empirical_data_2 = read.csv(empirical_dataset_2, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
-empirical_data_3 = read.csv(empirical_dataset_3, check.names=FALSE, na.strings=c("NA","NaN", " ", ""))
-
-# Filter noise 
-#empirical_data = rbind(empirical_data_2, empirical_data_1, empirical_data_3)
-empirical_data = rbind(empirical_data_2) ## =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+empirical_data = rbind(empirical_data_2)
 empirical_data = within(empirical_data, rm("ID"))
 
 ## <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
